@@ -1,3 +1,142 @@
-.heading{
-    color: green;
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns logo and nav items vertically */
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures full-width header */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* Adds spacing only on the left */
+}
+
+.logo {
+    width: 120px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    padding-right: 20px; /* Adds spacing only on the right */
+}
+
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items > ul > li {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-items > ul > li:hover {
+    color: #0073e6;
+}
+
+/* Body Styling */
+.body {
+    max-width: 100%; /* Full width for the body */
+    padding: 20px 0;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 10px 20px; /* Adds spacing only on the top and bottom */
+}
+
+/* Restaurant Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    padding: 20px;
+    margin: 0 auto; /* Centers the card horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content inside the card */
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card h4 {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.card span {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card span h4 {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Styling for mobile-friendly responsiveness */
+@media (max-width: 768px) {
+    .nav-items > ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-items > ul > li {
+        padding: 10px;
+    }
+
+    .restaurant-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .card img {
+        height: 140px; /* Reduce image size on small screens */
+    }
 }

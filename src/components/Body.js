@@ -1,6 +1,6 @@
 import restList from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -15,6 +15,16 @@ const Body = () => {
   // useState: To create a state variable, searchText is local state variable
   const [searchText, setSearchText] = useState("");
   const [restaurants, setRestaurants] = useState(restList);
+  useEffect(() => {
+    fetchData();
+  },[]);
+  const fetchData = async () => {
+    const data = await fetch("https://www.swiggy.com/dapi/cart");
+  
+ const json = await data.json();
+  console.log(json);
+ // setRestaurants(json?.data);
+  };
   return (
     <>
       <div className="search-container">

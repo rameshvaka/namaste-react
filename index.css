@@ -177,3 +177,15 @@ body {
   .search-container .search-btn:hover {
     background-color: #016034;
   }
+  .nav-items > ul > li .logout-btn {
+    background-color: var(--orange);
+  }
+  
+  .nav-items > ul > li .login-btn {
+    background-color: var(--light-red);
+  }
+  
+  .nav-items > ul > li .logout-btn:hover,
+  .nav-items > ul > li .login-btn:hover {
+    background-color: var(--dark-green);
+  }

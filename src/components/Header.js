@@ -1,5 +1,9 @@
 import { LOGO_URL } from "../utils/constants";
+import { useState } from "react";
 const Header = () => {
+     // use useState for user logged in or logged out
+  const [isLoggedin, setIsLoggedin] = useState(true);
+
     return(
     <div className="header">
         <div className="logo-container">
@@ -10,7 +14,24 @@ const Header = () => {
                 <li>Name</li>
                 <li>About Us</li>
                 <li>Contact Us</li>
-                <li>CreateRoot</li>
+                <li>CreateRoot</li><li>
+            <i className="fa-solid fa-cart-shopping"></i>
+          </li>
+          <li>
+            {/* use conditional rendering for login and logout */}
+            {isLoggedin ? (
+              <button
+                className="logout-btn"
+                onClick={() => setIsLoggedin(false)}
+              >
+                Logout
+              </button>
+            ) : (
+              <button className="login-btn" onClick={() => setIsLoggedin(true)}>
+                Login
+              </button>
+            )}
+          </li>
             </ul>
 
         </div>

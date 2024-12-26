@@ -1,20 +1,39 @@
-import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
-const Header = () => {
-     // use useState for user logged in or logged out
-  const [isLoggedin, setIsLoggedin] = useState(true);
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+// Title component for display logo
+// const Title = () => (
+//   <a href="/">
+//     <img
+//       className="logo"
+//       src={foodFireLogo}
+//       alt="Food Fire Logo"
+//       title="Food Fire Logo"
+//     />
+//   </a>
+// );
 
-    return(
+// Header component for header section: Logo, Nav Items
+const Header = () => {
+  // use useState for user logged in or logged out
+  const [isLoggedin, setIsLoggedin] = useState(true);
+  const navigate = useNavigate();
+  return (
     <div className="header">
-        <div className="logo-container">
-            <img className = "logo" src={LOGO_URL}/>
-        </div>
-        <div className="nav-items">
-            <ul>
-                <li>Name</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>CreateRoot</li><li>
+      
+      <div className="nav-items">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
             <i className="fa-solid fa-cart-shopping"></i>
           </li>
           <li>
@@ -27,15 +46,15 @@ const Header = () => {
                 Logout
               </button>
             ) : (
-              <button className="login-btn" onClick={() => setIsLoggedin(true)}>
+              <button className="login-btn" onClick={() => navigate("/login")}>
                 Login
               </button>
             )}
           </li>
-            </ul>
-
-        </div>
+        </ul>
+      </div>
     </div>
-    )
+  );
 };
+
 export default Header;

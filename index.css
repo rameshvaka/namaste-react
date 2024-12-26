@@ -9,13 +9,20 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aligns logo and nav items vertically */
-    padding: 10px 0;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensures full-width header */
-}
-
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    background-color: var(--header-bg-color);
+    border-radius: 5px;
+    box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow-y: hidden;
+  }
 .logo-container {
     display: flex;
     align-items: center;
@@ -188,4 +195,8 @@ body {
   .nav-items > ul > li .logout-btn:hover,
   .nav-items > ul > li .login-btn:hover {
     background-color: var(--dark-green);
+  }
+  .app-layout {
+    margin: 0;
+    padding: 0;
   }

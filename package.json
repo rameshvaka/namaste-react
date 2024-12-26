@@ -1,7 +1,8 @@
 {
   "name": "react_app_9_12_24",
   "version": "1.0.0",
-  "description": "This is Namaste React",
+  "description": "- Dev Build\r - Local Server\r - HMR = Hot Module Relacement\r - File Watching Algorithm - Written C++\r - Image Optimization\r - Minification\r - Bundling\r - Compress\r - Consistent Hshing\r - Code Splitting\r - Differential Bundling - support old browsers\r - Error handling\r - HTTPs\r - Tree shaking - remove unused code\r - Different dev and prod bundles",
+  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -11,22 +12,19 @@
     "type": "git",
     "url": "git+https://github.com/rameshvaka/namaste-react.git"
   },
-  "keywords": [],
-  "author": "Ramesh",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rameshvaka/namaste-react/issues"
   },
   "homepage": "https://github.com/rameshvaka/namaste-react#readme",
   "devDependencies": {
-    "parcel": "^2.13.2",
+    "parcel": "^2.13.3",
     "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ]
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.28.1"
+  }
 }

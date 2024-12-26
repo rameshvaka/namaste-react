@@ -16,7 +16,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [restaurants, setRestaurants] = useState(restList);
   useEffect(() => {
-    fetchData();
+  //  fetchData();
   },[]);
   const fetchData = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/cart");

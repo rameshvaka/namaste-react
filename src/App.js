@@ -1,11 +1,14 @@
 // ## Namaste React Course by Akshay Saini
-// # Chapter 06 - Exploring the world
+// Chapter 05 - Let's get Hooked!
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
+import Header from "./Components/Header";
+import Body from "./Components/Body";
+import Footer from "./Components/Footer";
+import About from "./Components/About";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Contact from "./Components/Contact";
 
 /* My Food App structure will look like this, 
             1) Header
@@ -28,13 +31,43 @@ import Footer from "./components/Footer";
 // AppLayout component to render: Header, Body and Footer Component
 const AppLayout = () => {
   return (
-    <React.Fragment>
+    <div className="app">
       <Header />
-      <Body />
+      <Outlet />
       <Footer />
-    </React.Fragment>
+    </div>
   );
 };
-
+// call createBrowserRouter for routing different pages
+const appRouter = createBrowserRouter([
+  {
+    path: "/", // show path for routing
+    element: <AppLayout />, // show component for particular path
+    errorElement: <Error />, // show error component for path is different
+    children: [
+      // show children component for routing
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      // {
+      //   path: "/restaurant/:resId",
+      //   element: <RestaurantMenu />,
+      // },
+    ],
+  },
+  // {
+  //   path: "/login",
+  //   element: <Login />,
+  // },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
